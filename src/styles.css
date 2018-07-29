@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
+
+.t-main {
+  height: 100%;
+}
+
+.t-header {
+  width: 100%;
+}
+
+.t-contents {
+  height: 100%;
+  padding: 15px;
+}
+
+.t-footer {
+  width: 100%;
+}

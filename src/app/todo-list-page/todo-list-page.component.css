@@ -1,0 +1,23 @@
+  #todo-list-item {
+    overflow-y: scroll;
+  }
+  
+  #todo-item-header {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .panel-footer {
+    padding: 15px;
+  }
+
+  .panel-footer button {
+    width: 100%;
+  }
+
+  .panel-default > .panel-heading {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #ddd;
+    font-size: 20px;
+    border-bottom: none;
+  }
