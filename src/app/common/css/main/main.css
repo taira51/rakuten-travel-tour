@@ -1,0 +1,47 @@
+html, body {
+  height: 100%;
+}
+ 
+
+.t-main {
+  height: 100%;
+}
+
+.t-header {
+
+}
+
+.t-contents {
+  height: 100%;
+  padding: 15px;
+}
+
+.t-footer {
+
+}
+
+.panel-default > .panel-heading {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #ddd;
+  font-size: 20px;
+  border-bottom: none;
+}
+
+.panel-footer button {
+  width: 100%;
+}
+
+.panel .list-group-item {
+  border-left: none;
+  border-right: none;
+}
+
+#todo-list-item {
+  overflow-y: scroll;
+}
+
+#todo-item-header {
+  /* border-bottom: */
+  border-bottom: 1px solid #ddd;
+}

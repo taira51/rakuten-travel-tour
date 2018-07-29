@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ToDo List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="../common/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../common/css/main/main.css">
+</head>
+
+<body>
+
+  <div class="t-main">
+    <div class="container-fulid">
+      <div class="t-contents">
+        <div class="row">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <span>ToDo List</span>
+              </div>
+              <div id="todo-list-item">
+                <a class="list-group-item" href="#">メニューＡ</a>
+                <a class="list-group-item" href="#">メニューＢ</a>
+                <a class="list-group-item" href="#">メニューＣ</a>
+              </div>
+                <div class="panel-footer">
+                <button type="button" class="btn btn-primary" aria-label="">
+                  <span class="glyphicon glyphicon-plus"></span>
+                  <span>ToDoを追加する</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="panel panel-default">
+              <div id="todo-item-header" class="panel-heading">
+                <span>ToDoが選択されていません。</span>
+              </div>
+              <div id="todo-item-body" class="panel-body">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../common/jquery-1.10.1/js/jquery-1.10.1.min.js"></script>
+  <script src="./todo-list.js"></script>
+</body>
+
+</html>
