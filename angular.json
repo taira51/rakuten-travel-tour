@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MyApp": {
+    "ToDoList": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/MyApp",
+            "outputPath": "dist/ToDoList",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "MyApp:build"
+            "browserTarget": "ToDoList:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "MyApp:build:production"
+              "browserTarget": "ToDoList:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MyApp:build"
+            "browserTarget": "ToDoList:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "MyApp-e2e": {
+    "ToDoList-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "MyApp:serve"
+            "devServerTarget": "ToDoList:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "MyApp:serve:production"
+              "devServerTarget": "ToDoList:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "MyApp"
+  "defaultProject": "ToDoList"
 }
