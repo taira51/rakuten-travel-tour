@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AgGridModule } from 'ag-grid-angular';
 
 import { AppComponent } from './app.component';
 import { ToDoListPageComponent } from './todo-list-page/todo-list-page.component';
@@ -18,6 +20,8 @@ import { JsonpModule } from '../../node_modules/@angular/http';
     OverseasTourPageComponent,
   ],
   imports: [
+    NgbModule.forRoot(),
+    AgGridModule.withComponents([]),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
