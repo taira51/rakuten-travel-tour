@@ -5,7 +5,7 @@ import { Observable } from '../../../node_modules/rxjs';
 import { map } from 'rxjs/operators';
 
 const abRoadApi = {
-  url: 'https://webservice.recruit.co.jp/ab-road/tour/v1',
+  url: 'https://webservice.recruit.co.jp/ab-road/spot/v1',
   key: API_KEY.abRoad,
   defaultSize: '30',
   sortRanking: '5',
@@ -18,17 +18,16 @@ export class OverseasTourPageService {
 
   constructor(private jsonp: Jsonp) { }
 
-  /** ツアー情報取得 */
-  getTourData(areaCode: string): Observable<any> {
-    const option = this.setParam(areaCode);
+  /** 観光地データ */
+  getSpotData(): Observable<any> {
+    const option = this.setParam();
     return this.reqData(option);
   }
 
   /** API 通信設定 */
-  setParam(areaCode: string): RequestOptions {
+  setParam(): RequestOptions {
     let param = new URLSearchParams();
     param.set('key', abRoadApi.key);
-    param.set('area', areaCode);
     param.set('order', abRoadApi.sortRanking);
     param.set('count', abRoadApi.defaultSize);
     param.set('format', abRoadApi.format);

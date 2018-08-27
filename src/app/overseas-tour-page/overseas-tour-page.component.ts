@@ -26,52 +26,17 @@ export class OverseasTourPageComponent implements OnInit {
   /** エリア選択メニューの開閉 */
   isCollapsed = false;
 
-  /** 3エリア全データ */
-  areas = [
-    { code: "BCH", name: "ビーチリゾート", data: null },
-    // { code: "EUR", name: "ヨーロッパ", data: null },
-    // { code: "DUS", name: "アメリカ", data: null },
-    // { code: "BOOKMARK", name: "お気に入り", data: null },
-  ];
-  area = { code: "BCH", name: "ビーチリゾート", data: null };
-
   tourList: any;
 
   constructor(private httpService: OverseasTourPageService) { }
 
   ngOnInit() {
-    this.getTour();
+    this.getSpot();
   }
 
-  getTour() {
-    this.httpService.getTourData(this.area.code).subscribe(result => {
+  getSpot() {
+    this.httpService.getSpotData().subscribe(result => {
       this.tourList = result.data;
-      console.log(this.tourList);
     });
   }
-
-  // /** 3エリアのツアー情報を一括情報 */
-  // getTour() {
-  //   this.selectedData = null;
-  //   for (let i = 0; i< this.areas.length; i++) {
-  //     let areaCode = this.areas[i].code;
-  //     if (areaCode === "BOOKMARK") {
-  //       continue;
-  //     }
-  //     this.httpService.getTourData(areaCode).subscribe(result => {
-  //       this.setTour(result, i),
-  //       error => alert("通信エラー¥n" + error)
-  //     });
-  //   }
-  // }
-
-  // /** 受信データ取得 */
-  // setTour(result, i) {
-  //   if (result.error) {
-  //     alert("Web APIエラー¥n" + result.message);
-  //     return;
-  //   }
-  //   this.areas[i].data = result;
-  //   console.log(this.areas[i].data);
-  // }
 }
