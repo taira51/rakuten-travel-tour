@@ -11,6 +11,7 @@ import { UnderlineDirective } from './common/directive/underline.directive';
 import { OverseasTourPageComponent } from './overseas-tour-page/overseas-tour-page.component';
 import { OverseasTourPageService } from './overseas-tour-page/overseas-tour-page.service';
 import { JsonpModule } from '../../node_modules/@angular/http';
+import { FormsModule } from '../../node_modules/@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { JsonpModule } from '../../node_modules/@angular/http';
     NgbModule.forRoot(),
     AgGridModule.withComponents([]),
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     JsonpModule,
