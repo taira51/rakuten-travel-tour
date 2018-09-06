@@ -1,17 +1,15 @@
-<div class="container-fluid">
-  <div class="overseas-tour-page-content">
-    <div *ngFor="let tour of tourList">
-      <li class="tour-list">
-        <a href={{tour.urls.pc}}>{{ tour.title }}</a>
-      </li>
-    </div>
+<div class="overseas-tour-page-content">
+  <app-overseas-tour-image></app-overseas-tour-image>
+  <div class="search-condition">
+    <select #area class="form-control" (change)="onChangeAreaCond(area.value)">
+      <option *ngFor="let area of areaList" [value]="area.code">
+        {{ area.name }}
+      </option>
+    </select>
+    <input class="form-control" [(ngModel)]="searchKeyword">
+    <button class="btn btn-default" (click)="onClickSearchButton()">検索</button>
+  </div>    
+  <div *ngFor="let tour of tourList">
+    <app-overseas-tour-image [tourData]="tour"></app-overseas-tour-image>
   </div>
 </div>
-
-<ag-grid-angular 
-    style="width: 500px; height: 500px;" 
-    class="ag-theme-balham"
-    [rowData]="rowData" 
-    [columnDefs]="columnDefs"
-    >
-</ag-grid-angular>

@@ -8,46 +8,43 @@ import { OverseasTourPageService } from './overseas-tour-page.service';
 })
 export class OverseasTourPageComponent implements OnInit {
 
-  /** 選択したツアー情報(1件) */
-  tourObj;
+  /** エリア抽出用セレクトボックスリスト */
+  areaList;
 
-  /** 選択したエリアのツアー情報 */
-  selectedData
+  /** 抽出エリアコード */
+  filterArea;
 
-  /** ブックマーク */
-  bookMark
+  /** 検索インプット */
+  searchKeyword = '';
 
-  /** モバイル　判定用 */
-  isMobile = false;
-
-  /** モバイル画面幅 */
-  MOBILE_SCREEN_WIDTH = 768;
-
-  /** エリア選択メニューの開閉 */
-  isCollapsed = false;
-
-  tourList: any;
-
-  columnDefs = [
-    { headerName: 'Make', field: 'make' },
-    { headerName: 'Model', field: 'model' },
-    { headerName: 'Price', field: 'price' }
-  ];
-
-  rowData = [
-    { make: 'Toyota', model: 'Celica', price: 35000 },
-    { make: 'Ford', model: 'Mondeo', price: 32000 },
-    { make: 'Porsche', model: 'Boxter', price: 72000 }
-  ];
+  /** 海外ツアー一覧 */
+  tourList;
 
   constructor(private httpService: OverseasTourPageService) { }
 
   ngOnInit() {
-    this.getSpot();
+    this.httpService.getAreaData().subscribe(result => {
+      this.areaList = result.data.area;
+      this.getTour(this.areaList[0].code);
+    });
   }
 
-  getSpot() {
-    this.httpService.getSpotData().subscribe(result => {
+  /** ツアー情報取得 */
+  getTour(code?) {
+    this.httpService.getTourData(code).subscribe(result => {
+      this.tourList = result.data.tour;
+    });
+  }
+
+  /** エリア抽出セレクトボックス　変更イベント */
+  onChangeAreaCond(event) {
+    this.filterArea = event;
+  }
+
+  /** 検索ボタン 押下イベント */
+  onClickSearchButton() {
+    // todo 抽出条件をもとにツアー情報取得 
+    this.httpService.getTourData().subscribe(result => {
       this.tourList = result.data;
     });
   }

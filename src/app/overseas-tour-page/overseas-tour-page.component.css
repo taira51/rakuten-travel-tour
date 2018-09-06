@@ -1,7 +1,17 @@
-.tour-list {
-  width: 200px;
-}
-
 .overseas-tour-page-content {
   padding: 15px;
+  /** TODO heightは上位のコンポーネントで計算する必要がある */
+  height: 90%;
+}
+
+.search-condition {
+  display: flex;
+}
+
+.search-condition > select {
+  width: auto;
+}
+
+.search-condition  > input,button {
+  width: auto;
 }
