@@ -1,5 +1,4 @@
 <div class="overseas-tour-page-content">
-  <app-overseas-tour-image></app-overseas-tour-image>
   <div class="search-condition">
     <select #area class="form-control" (change)="onChangeAreaCond(area.value)">
       <option *ngFor="let area of areaList" [value]="area.code">
@@ -10,6 +9,6 @@
     <button class="btn btn-default" (click)="onClickSearchButton()">検索</button>
   </div>    
   <div *ngFor="let tour of tourList">
-    <app-overseas-tour-image [tourData]="tour"></app-overseas-tour-image>
+    <app-overseas-tour-bean [tourData]="tour"></app-overseas-tour-bean>
   </div>
 </div>
