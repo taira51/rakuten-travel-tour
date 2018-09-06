@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-overseas-tour-image',
-  templateUrl: './overseas-tour-image.component.html',
+  selector: 'app-overseas-tour-bean',
+  templateUrl: './overseas-tour-bean.component.html',
 })
-export class OverseasTourImageComponent implements OnInit {
+export class OverseasTourBeanComponent implements OnInit {
   
   /** ツアーデータ */
   @Input() tourData;

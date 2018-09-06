@@ -11,7 +11,7 @@ import { ToDoListPageComponent } from './todo-list-page/todo-list-page.component
 import { UnderlineDirective } from './common/directive/underline.directive';
 import { OverseasTourPageComponent } from './overseas-tour-page/overseas-tour-page.component';
 import { OverseasTourPageService } from './overseas-tour-page/overseas-tour-page.service';
-import { OverseasTourImageComponent } from './overseas-tour-page/overseas-tour-image/overseas-tour-image.component';
+import { OverseasTourBeanComponent } from './overseas-tour-page/overseas-tour-bean/overseas-tour-bean.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { OverseasTourImageComponent } from './overseas-tour-page/overseas-tour-i
     ToDoListPageComponent,
     UnderlineDirective,
     OverseasTourPageComponent,
-    OverseasTourImageComponent,
+    OverseasTourBeanComponent,
   ],
   imports: [
     NgbModule.forRoot(),
