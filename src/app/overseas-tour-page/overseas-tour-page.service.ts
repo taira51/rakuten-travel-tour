@@ -5,6 +5,11 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 const abRoadApi = {
+  /**
+   * リクルートWebサービスで提供されている各APIは、機能の修正や追加によって各APIの構造が変わる場合があるとのこと。
+   * バージョン別に管理されているので、 api_version は "1.02" で固定しておく。
+   */
+  api_version: "1.02",
   tourUrl: 'https://webservice.recruit.co.jp/ab-road/tour/v1',
   areaUrl: 'https://webservice.recruit.co.jp/ab-road/area/v1',
   key: API_KEY.abRoad,
