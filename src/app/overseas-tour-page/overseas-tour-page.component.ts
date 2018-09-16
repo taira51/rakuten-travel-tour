@@ -20,18 +20,23 @@ export class OverseasTourPageComponent implements OnInit {
   /** 海外ツアー一覧 */
   tourList;
 
+  /** 検索ヒット数 */
+  resultsAvailable;
+
   constructor(private httpService: OverseasTourPageService) { }
 
   ngOnInit() {
     this.httpService.getAreaData().subscribe(result => {
       this.areaList = result.data.area;
-      this.getTour(this.areaList[0].code);
+      this.filterArea = this.areaList[0].code;
+      this.getTour();
     });
   }
 
   /** ツアー情報取得 */
-  getTour(code?) {
-    this.httpService.getTourData(code).subscribe(result => {
+  getTour() {
+    this.httpService.getTourData(this.filterArea, this.searchKeyword).subscribe(result => {
+      this.resultsAvailable = result.data.results_available;
       this.tourList = result.data.tour;
     });
   }
@@ -43,9 +48,6 @@ export class OverseasTourPageComponent implements OnInit {
 
   /** 検索ボタン 押下イベント */
   onClickSearchButton() {
-    // todo 抽出条件をもとにツアー情報取得 
-    this.httpService.getTourData().subscribe(result => {
-      this.tourList = result.data;
-    });
+    this.getTour();
   }
 }

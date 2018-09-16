@@ -1,14 +1,21 @@
 <div class="overseas-tour-page-content">
-  <div class="search-condition">
-    <select #area class="form-control" (change)="onChangeAreaCond(area.value)">
-      <option *ngFor="let area of areaList" [value]="area.code">
-        {{ area.name }}
-      </option>
-    </select>
-    <input class="form-control" [(ngModel)]="searchKeyword">
-    <button class="btn btn-default" (click)="onClickSearchButton()">検索</button>
-  </div>    
-  <div *ngFor="let tour of tourList">
-    <app-overseas-tour-bean [tourData]="tour"></app-overseas-tour-bean>
+  <div class="tour-list">
+    <div class="search-condition">
+      <select #area class="form-control" (change)="onChangeAreaCond(area.value)">
+        <option *ngFor="let area of areaList" [value]="area.code">
+          {{ area.name }}
+        </option>
+      </select>
+      <input class="form-control" [(ngModel)]="searchKeyword" (keyDown.enter)="onClickSearchButton()">
+      <button class="btn btn-default" (click)="onClickSearchButton()">検索</button>
+      <div>
+        <span class="results-available">{{resultsAvailable | number}}</span>
+        <span class="unit-available">件</span>
+      </div>
+    </div>
+    <div *ngFor="let tour of tourList">
+      <app-overseas-tour-bean [tourData]="tour"></app-overseas-tour-bean>
+      <div class="tour-bean-border"></div>
+    </div>
   </div>
 </div>

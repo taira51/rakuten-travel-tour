@@ -24,11 +24,12 @@ export class OverseasTourPageService {
 
   constructor(private jsonp: Jsonp) { }
 
-  getData(url, code?) {
+  getData(url, code, keyword?) {
     let param = this.setParam();
-
-    if (code) {
-      param.set('area', code);
+    param.set('area', code);
+    
+    if (keyword) {
+      param.set('keyword', keyword);
     }
 
     let options: RequestOptionsArgs = {
@@ -40,8 +41,8 @@ export class OverseasTourPageService {
   }
 
   /** ツアーデータ取得 */
-  getTourData(code?): Observable<any> {
-    return this.getData(abRoadApi.tourUrl, code);
+  getTourData(area, keyword?): Observable<any> {
+    return this.getData(abRoadApi.tourUrl, area, keyword);
   }
 
   /** エリア情報取得 */

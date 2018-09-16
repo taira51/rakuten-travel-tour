@@ -1,11 +1,13 @@
 .overseas-tour-page-content {
-  padding: 15px;
+  padding: 0 15px;
   /** TODO heightは上位のコンポーネントで計算する必要がある */
-  height: 90%;
+  height: 100%;
 }
 
 .search-condition {
   display: flex;
+  align-items: center;
+  margin-top: 5px;
 }
 
 .search-condition > select {
@@ -14,4 +16,24 @@
 
 .search-condition  > input,button {
   width: auto;
+}
+
+.results-available {
+  margin-left: 20px;
+  font-size: 20px;
+  color: red;
+}
+
+.unit-available {
+  margin: 0 2px;
+}
+
+.tour-list {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.tour-bean-border {
+  margin: 10px 5px 0;
+  border-bottom: solid 2px #ccc;
 }
