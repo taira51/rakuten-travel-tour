@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+  color: #333;
+}
+
+.t-main {
+  height: 100%;
+}
+
+.t-header {
+  width: 100%;
+}
+
+.t-contents {
+  height: 100%;
+  padding: 15px;
+}
+
+.t-footer {
+  width: 100%;
+}
+
+.navbar-default { 
+  background-color: #f8f8f8;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+}
+
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav {
+  flex-direction: unset;
+  color: #333;
+}
+
+.navbar-nav > a {
+  margin: 0 5px;
+}

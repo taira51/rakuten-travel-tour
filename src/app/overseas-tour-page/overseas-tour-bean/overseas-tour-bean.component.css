@@ -1,0 +1,87 @@
+.padding-none {
+  margin: 0;
+  margin-left: -15px;
+}
+
+.bean {
+  margin-top: 10px;
+  background-color: #F8F8FF;
+}
+
+.bean-header {
+  padding: 5px;
+}
+
+.countory {
+  display: flex;
+  align-items: center;
+}
+
+.countory-inline {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.title {
+  width: 100%;
+  margin-left: 10px;
+}
+
+.term-day {
+  width: auto;
+  margin-top: 5px;
+  border-bottom: solid 1px #ccc;
+}
+
+.term-day > span:first-child {
+  font-size: 25px;
+  margin: 0 3px 0 6px;;
+}
+
+.bean-body {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.body-detail {
+  width: 90%;
+  margin-left: 10px;
+}
+
+.info-bean {
+  width: 500px;
+  display: flex;
+  margin: 5px 10px;
+  border-bottom: solid 1px #ccc;
+}
+
+.info-title {
+  width: 50px;
+  margin: 0 5px;
+}
+
+.body-detail-right {
+  height: 100px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  border-left: solid 1px #ccc;
+}
+
+.price-group {
+  margin-left: 20px;
+}
+
+.price-group span {
+  margin: 0 2px;
+}
+
+.price-value {
+  color: red;
+  font-size: 40px;
+}
+
+.repletion > span { 
+  margin: 0 2px;
+}

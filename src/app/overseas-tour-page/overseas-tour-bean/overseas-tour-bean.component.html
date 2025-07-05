@@ -1,0 +1,56 @@
+<div class="bean">
+  <div class="bean-header">
+    <div class="row margin-none">
+      <div class="col-lg-11 col-md-11 col-sm-11">
+        <div class="countory">
+          <span class="countory-inline">{{tourData?.dest?.country?.name}}</span>
+        </div>
+        <div class="title">
+          <a href={{getUrls}} target="_blank">{{tourData?.title}}</a>
+        </div>
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-1">
+        <div class="term-day">
+          <span>{{tourData?.term}}</span>
+          <span>days</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bean-body">
+    <img class="img" src={{getImage}}>
+    <div class="body-detail-center">
+      <div class="info-bean">
+        <div class="info-title">City</div>
+        <div>{{tourData?.city_summary}}</div>
+      </div>
+      <div class="info-bean">
+        <span class="info-title">Hotel</span>
+        <span>{{tourData?.hotel_summary}}</span>
+      </div>
+      <div class="info-bean">
+        <span class="info-title">航空</span>
+        <span>{{tourData?.airline_summary}}</span>
+      </div>
+      <div class="info-bean">
+        <span class="info-title">出発地</span>
+        <span>{{tourData?.dept_city?.name}}</span>(<span>{{tourData?.dept_city?.code}}</span>)
+      </div>
+    </div>
+    <div class="body-detail-right">
+      <div class="price-group">
+        <div class="price">
+          <span class="price-value">{{tourData?.price?.all_month?.min | number}}</span>
+          <span>円</span>
+          <span>〜</span>
+          <span class="price-value">{{tourData?.price?.all_month?.max | number}}</span>
+          <span>円</span>
+        </div>
+        <div class="repletion text-center">
+          <span>（※お一人様</span>
+          <span>・{{getSurcharge}}）</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
